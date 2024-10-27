@@ -1,10 +1,29 @@
 import subprocess
 import platform
+import ctypes
+import sys
 import os
+
+
+def is_admin():
+    os_name = platform.system()
+    if os_name == "Windows":
+        try:
+            return ctypes.windll.shell32.IsUserAnAdmin()
+        except:
+            return False
+    elif os_name in ["Linux", "Darwin"]:
+        return os.geteuid() == 0
+    else:
+        return False
 
 
 def init():
     print("[*]  This is init script please wait...")
+    if not is_admin():
+        print("[-]  If you runing this for the first time run this as administrator/root. If not ignore this message.")
+        return
+
     check = subprocess.run("git --version", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     os_name = platform.system()
     if check.returncode != 0:
@@ -51,3 +70,5 @@ def init():
         os.system("cls")
     elif os_name in ["Linux", "Darwin"]:
         os.system("clear")
+
+    return
