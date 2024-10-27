@@ -1,4 +1,4 @@
-name: Testing app run...
+name: App Build Status
 on:
   push:
     branches: ["main"]
