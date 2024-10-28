@@ -1,9 +1,7 @@
 import subprocess
 import platform
 import ctypes
-import sys
 import os
-
 
 def is_admin():
     os_name = platform.system()
