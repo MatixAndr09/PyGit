@@ -1,3 +1,7 @@
+<div align="center">
+  <img src="img/PyGit.png" alt="logo" />
+</div>
+
 PyGit is not just another Git client; it's a paradigm shift in how you interact with Git within the terminal. Designed for developers who demand power, speed, and customization, PyGit offers a Neovim-inspired TUI built with Python and the Textual library.  Experience a truly immersive and efficient Git workflow that adapts to your needs.
 
 ## Unleash the Power of Asynchronous Git
